@@ -2,15 +2,40 @@ import logo from './logo.svg';
 import './App.css';
 import LearningComponent from './components/learning-examples/LearningComponent';
 // import {Component} from 'react';
+import Counter from './components/counter/Counter'
 
 
 function App() { // return without parenthesis
   return (
     <div className="App"> 
-      <LearningComponent></LearningComponent>
+      {/* <LearningComponent></LearningComponent> */}
+
+      <Counter></Counter>
+      <Counter by={2}></Counter>
+      <Counter by={5}></Counter>
     </div>
   )
 }
+
+// function PlayingWithProps(properties) {
+//   console.log(properties)
+//   console.log(properties.property1)
+//   console.log(properties.property2)
+//   return (
+//     <div>Props</div>
+//   ) 
+// }
+
+function PlayingWithProps({property1, property2}) {
+  console.log(property1)
+  console.log(property2)
+
+  return (
+    <div>Props</div>
+  ) 
+}
+
+
 
 // function FirstComponent() { // Why we put parenthesis?
 
