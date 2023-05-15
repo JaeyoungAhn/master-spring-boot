@@ -5,13 +5,14 @@ import LearningComponent from './components/learning-examples/LearningComponent'
 import CounterButton from './components/counter/Counter'
 import Counter from './components/counter/Counter';
 
+import TodoApp from './components/todo/TodoApp';
 
 function App() { // return without parenthesis
   return (
     <div className="App"> 
       {/* <LearningComponent></LearningComponent> */}
-
-      <Counter/>
+      {/* <Counter/> */}
+      <TodoApp/>
     </div>
   )
 }
