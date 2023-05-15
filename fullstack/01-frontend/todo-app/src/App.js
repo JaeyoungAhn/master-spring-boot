@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import LearningComponent from './components/learning-examples/LearningComponent';
 // import {Component} from 'react';
-import Counter from './components/counter/Counter'
+import CounterButton from './components/counter/Counter'
+import Counter from './components/counter/Counter';
 
 
 function App() { // return without parenthesis
@@ -10,9 +11,7 @@ function App() { // return without parenthesis
     <div className="App"> 
       {/* <LearningComponent></LearningComponent> */}
 
-      <Counter></Counter>
-      <Counter by={2}></Counter>
-      <Counter by={5}></Counter>
+      <Counter/>
     </div>
   )
 }
