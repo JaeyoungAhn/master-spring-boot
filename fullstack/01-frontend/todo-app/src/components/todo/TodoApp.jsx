@@ -43,25 +43,28 @@ function LoginComponent() {
 
     }
 
-    function SuccessMessageComponent() {
-        if(showSuccessMessage) {
-            return <div className="successMessage">Authenticated Successfully</div>
-        }
-        return null
-    }
+    // function SuccessMessageComponent() {
+    //     if(showSuccessMessage) {
+    //         return <div className="successMessage">Authenticated Successfully</div>
+    //     }
+    //     return null
+    // }
     
-    function ErrorMessageComponent() {
-        if(showErrorMessage) {
-            return <div className="errorMessage">Authenticated Failed. Please check your crednetials.</div>
-        }
-        return null
-    }
+    // function ErrorMessageComponent() {
+    //     if(showErrorMessage) {
+    //         return <div className="errorMessage">Authenticated Failed. Please check your crednetials.</div>
+    //     }
+    //     return null
+    // }
 
     return (
         <>
             <div className="Login">
+                {showSuccessMessage && <div className="successMessage">Authenticated Successfully</div>}
+                {showErrorMessage && <div className="errorMessage">Authenticated Failed. Please check your crednetials.</div>}
+{/* 
                 <SuccessMessageComponent></SuccessMessageComponent>
-                <ErrorMessageComponent></ErrorMessageComponent>
+                <ErrorMessageComponent></ErrorMessageComponent> */}
                 <div className="LoginForm">
                     <div>
                         <label>User Name</label>
