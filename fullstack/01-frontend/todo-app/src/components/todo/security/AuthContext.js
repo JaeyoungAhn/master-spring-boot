@@ -7,22 +7,27 @@ export const useAuth = () => useContext(AuthContext)
 
 //2: Share the created context with other components
 export default function AuthProvider({ children }) {
-    const [number, setNumber] = useState(0)
     const [isAuthenticated, setAuthenticated] = useState(false)
 
+    function login(username, password) {
+        if(username==='springuser' && password==='hello') {
+            setAuthenticated(true)
+            return true
+        } else {
+            setAuthenticated(false)
+            return false
+        }
+    }
 
-    // setInterval ( () =>
-    //     setNumber(number+1)
-    //     ,
-    //     1000
-    // )
-    
+    function logout() {
+        setAuthenticated(false)
+    }
 
 
     return (
         // const valueToBeShared = {number, isAuthenticated, setAuthenticated}
         // shorthand format for key:value
-        <AuthContext.Provider value={ {number, isAuthenticated, setAuthenticated} }>
+        <AuthContext.Provider value={ {isAuthenticated, login} }>
             {children}
         </AuthContext.Provider>
     )

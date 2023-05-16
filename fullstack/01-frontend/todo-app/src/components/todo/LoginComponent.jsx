@@ -6,7 +6,6 @@ export default function LoginComponent() {
 
     const [username, setUsername] = useState('springuser')
     const [password, setPassword] = useState('')
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false)
     const [showErrorMessage, setShowErrorMessage] = useState(false)
     const navigate = useNavigate()
     const authContext = useAuth()
@@ -22,40 +21,17 @@ export default function LoginComponent() {
     }
 
     function handleSubmit(event) {
-        if(username==='springuser' && password==='hello') {
-            authContext.setAuthenticated(true)
-            console.log('Success')
-            setShowSuccessMessage(true)
-            setShowErrorMessage(false)
+        if(authContext.login(username, password)) {
             navigate(`/welcome/${username}`)
         } else {
-            authContext.setAuthenticated(false)
-            console.log('Failed')
-            setShowSuccessMessage(false)
-            setShowErrorMessage(true)
         }
 
     }
-
-    // function SuccessMessageComponent() {
-    //     if(showSuccessMessage) {
-    //         return <div className="successMessage">Authenticated Successfully</div>
-    //     }
-    //     return null
-    // }
-    
-    // function ErrorMessageComponent() {
-    //     if(showErrorMessage) {
-    //         return <div className="errorMessage">Authenticated Failed. Please check your crednetials.</div>
-    //     }
-    //     return null
-    // }
 
     return (
         <>
             <div className="Login">
                 <h1>Time to Login!</h1>
-                {showSuccessMessage && <div className="successMessage">Authenticated Successfully</div>}
                 {showErrorMessage && <div className="errorMessage">Authenticated Failed. Please check your credentials.</div>}
 {/* 
                 <SuccessMessageComponent></SuccessMessageComponent>
