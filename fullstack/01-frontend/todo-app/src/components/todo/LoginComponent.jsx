@@ -24,6 +24,7 @@ export default function LoginComponent() {
         if(authContext.login(username, password)) {
             navigate(`/welcome/${username}`)
         } else {
+            setShowErrorMessage(true)
         }
 
     }

@@ -27,7 +27,7 @@ export default function AuthProvider({ children }) {
     return (
         // const valueToBeShared = {number, isAuthenticated, setAuthenticated}
         // shorthand format for key:value
-        <AuthContext.Provider value={ {isAuthenticated, login} }>
+        <AuthContext.Provider value={ {isAuthenticated, login, logout} }>
             {children}
         </AuthContext.Provider>
     )
