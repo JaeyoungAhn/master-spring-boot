@@ -19,7 +19,7 @@ export default function ListTodosComponent() {
 
     const [todos, setTodos] = useState([])
 
-    const [message, setMessage] = useState([])
+    const [message, setMessage] = useState('')
 
     useEffect(() => refreshTodos(), [])
     // const todos = [
@@ -55,6 +55,10 @@ export default function ListTodosComponent() {
         navigate(`/todo/${id}`)
     }
 
+    function addNewTodo() {
+        navigate(`/todo/-1`)
+    }
+
     return (
         <>
             <div className="container">
@@ -64,7 +68,7 @@ export default function ListTodosComponent() {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                {/* <th>ID</th> */}
                                 <th>Description</th>
                                 <th>Is Done?</th>
                                 <th>Target Date</th>
@@ -77,7 +81,7 @@ export default function ListTodosComponent() {
                                 todos.map(
                                     todo => (
                                         <tr key={todo.id}>
-                                            <td>{todo.id}</td>
+                                            {/* <td>{todo.id}</td> */}
                                             <td>{todo.description}</td>
                                             <td>{todo.done.toString()}</td>
                                             <td>{todo.targetDate}</td>
@@ -93,6 +97,7 @@ export default function ListTodosComponent() {
                         </tbody>
                     </table>
                 </div>
+                <div className="btn btn-success m-2" onClick={addNewTodo}>Add New Todo</div>
             </div>
         </>
     )
