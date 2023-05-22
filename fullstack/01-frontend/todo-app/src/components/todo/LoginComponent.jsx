@@ -20,8 +20,8 @@ export default function LoginComponent() {
         console.log(event.target.value)
     }
 
-    function handleSubmit(event) {
-        if(authContext.login(username, password)) {
+    async function handleSubmit(event) {
+        if(await authContext.login(username, password)) {
             navigate(`/welcome/${username}`)
         } else {
             setShowErrorMessage(true)
